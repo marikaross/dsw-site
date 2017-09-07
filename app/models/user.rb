@@ -17,6 +17,9 @@ class User < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :registrations, dependent: :destroy
 
+  has_many :presenterships, dependent: :restrict_with_error
+  has_many :presented_sessions, through: :presenterships, source: :submission
+
   def current_registration
     registrations.for_current_year.first
   end

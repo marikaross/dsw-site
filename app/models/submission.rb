@@ -50,6 +50,9 @@ class Submission < ApplicationRecord
   has_many :sent_notifications, dependent: :destroy
   has_one :sponsorship, dependent: :restrict_with_error
 
+  has_many :presenterships, dependent: :destroy
+  has_many :presenters, through: :presenterships, source: :user
+
   validates :title, presence: true
   validates :description, presence: true
   validates :contact_email, presence: true
