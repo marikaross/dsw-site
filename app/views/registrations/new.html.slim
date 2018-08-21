@@ -38,7 +38,7 @@ section.common
       = f.text_field :company_name, data: { bindable: 'autocompleter', source: company_search_url }
 
       = f.label :primary_role, 'What is your job title?'
-      = f.text_field :primary_role, required: 'required'
+      = f.select :primary_role, collection: ['Accounting & Finance', 'Contract & Freelance', 'Customer Service/Success', 'Data/Analytics', 'Design', 'Developer/Engineer', 'Founder / Executive', 'Government', 'Health Care', 'Hospitality', 'Information Technology', 'Manufacturing', 'Non-profit', 'Operations', 'Product', 'Recruiting & Human Resources', 'Sales & Marketing', 'Writing & Content', 'Other'], required: 'required'
 
       = f.label :zip, 'What is the zip code of your primary residence?'
       = f.text_field :zip, required: 'required'
@@ -52,4 +52,4 @@ section.common
       = f.check_box :coc_acknowledgement, class: 'code-of-conduct', required: 'required'
       = render partial: 'layouts/shared/coc_acknowledgement'
 
-      = f.submit 'Register'
+      = f.submit 'Register' 
